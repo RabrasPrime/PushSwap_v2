@@ -6,7 +6,7 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 03:41:05 by tjooris           #+#    #+#             */
-/*   Updated: 2025/02/04 03:41:06 by tjooris          ###   ########.fr       */
+/*   Updated: 2025/02/05 13:16:19 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,20 @@
 void	ft_free_stack(t_node **stack, int size)
 {
 	t_node	*node;
+	t_node	*temp;
 	int		i;
 
-	i = 0;
+	if (!stack || !*stack)
+		return ;
 	node = *stack;
-	while (i < size - 1)
+	i = 0;
+	while (i < size)
 	{
-		node = node->next;
-		free(node->prev);
+		temp = node->next;
+		free(node);
+		node = temp;
 		i++;
 	}
-	free(node);
+	*stack = NULL; // Sécurisation pour éviter d'accéder à une mémoire libérée
 }
+

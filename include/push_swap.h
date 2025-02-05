@@ -6,7 +6,7 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 03:40:52 by tjooris           #+#    #+#             */
-/*   Updated: 2025/02/04 03:40:52 by tjooris          ###   ########.fr       */
+/*   Updated: 2025/02/05 13:28:46 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ typedef struct max
 
 t_node	*stack_a_init(t_node *stack, char **array);
 t_node	*create_node(int value);
-void	pile_down(t_node *stack, t_node *node);
+void	pile_down(t_node **stack, t_node *node);
 int		stack_size(t_node *stack);
 int		*stack_dup(int *array, t_node *stack);
 void	quicksort(t_node *stack, int *array, int start, int end);

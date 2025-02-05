@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcauchet <jcauchet@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 21:17:54 by juliencauch       #+#    #+#             */
-/*   Updated: 2022/11/05 15:08:55 by jcauchet         ###   ########.fr       */
+/*   Updated: 2025/02/05 10:47:59 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
+#include "push_swap.h"
 
 int	check_good_sort(t_node *stack_a, t_node *stack_b)
 {

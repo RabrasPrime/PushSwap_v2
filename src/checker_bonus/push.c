@@ -6,11 +6,11 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 09:34:32 by juliencauch       #+#    #+#             */
-/*   Updated: 2025/02/05 09:18:23 by tjooris          ###   ########.fr       */
+/*   Updated: 2025/02/05 16:55:27 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
 void	pointers_init(t_node **l, t_node **n, t_node **s, t_node **stack)
 {

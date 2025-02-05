@@ -6,7 +6,7 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 03:40:56 by tjooris           #+#    #+#             */
-/*   Updated: 2025/02/04 03:40:56 by tjooris          ###   ########.fr       */
+/*   Updated: 2025/02/05 17:31:44 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,8 @@ char	**args_handler(int *ac, char **av)
 	else if (*ac == 2)
 	{
 		array = ft_split(av[1], ' ');
-		if (!array)
-			exit(1);
+		if (!array || !array[0])
+			ft_error();
 		else if (!array[1])
 			test_one_arg(array[0], array);
 		*ac = ft_array_size(array);
@@ -63,8 +63,17 @@ char	**args_handler(int *ac, char **av)
 	{
 		i = 0;
 		array = malloc(sizeof(char *) * (*ac));
+		if (!array)
+			return (NULL);
 		while (++i < *ac)
+		{
 			array[i - 1] = ft_strdup(av[i]);
+			if (!array[i - 1])
+			{
+				ft_free_array(array);
+				error();
+			}
+		}
 		array[i - 1] = NULL;
 		(*ac)--;
 	}
@@ -123,6 +132,7 @@ int	main(int ac, char **av)
 	array = NULL;
 	array = args_handler(&ac, av);
 	stack_a = stack_a_init(stack_a, array);
+	ft_free_array(array);
 	order_checker(stack_a);
 	stack_b = NULL;
 	if (ac <= 3)
@@ -134,6 +144,5 @@ int	main(int ac, char **av)
 		index_init(stack_a);
 		big_sort(&stack_a, &stack_b);
 	}
-	ft_free_array(array);
 	ft_free_stack(&stack_a, stack_size(stack_a));
 }

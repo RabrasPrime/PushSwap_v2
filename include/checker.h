@@ -6,7 +6,7 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 09:18:10 by tjooris           #+#    #+#             */
-/*   Updated: 2025/02/05 09:21:21 by tjooris          ###   ########.fr       */
+/*   Updated: 2025/02/05 10:47:23 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # define CHECKER_H
 
 # include "get_next_line.h"
-# include "../libft/libft.h"
+# include "libft.h"
 
 void	sa(t_node **stack, int a);
 void	sb(t_node **stack, int a);

@@ -6,11 +6,11 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 09:12:30 by juliencauch       #+#    #+#             */
-/*   Updated: 2025/02/05 09:18:28 by tjooris          ###   ########.fr       */
+/*   Updated: 2025/02/05 10:46:53 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
 void	rra(t_node **stack, int a)
 {
