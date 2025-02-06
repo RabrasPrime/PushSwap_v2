@@ -6,11 +6,9 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 03:41:24 by tjooris           #+#    #+#             */
-/*   Updated: 2025/02/04 03:41:25 by tjooris          ###   ########.fr       */
+/*   Updated: 2025/02/06 11:55:02 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
 
 #include "push_swap.h"
 
@@ -61,7 +59,7 @@ void	pb(t_node **stack_a, t_node **stack_b)
 	(*stack_a)->prev = node->prev;
 	(*stack_a)->prev->next = *stack_a;
 	if (!(*stack_b))
-	{	
+	{
 		node->prev = node;
 		node->next = node;
 		*stack_b = node;

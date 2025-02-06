@@ -6,11 +6,9 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 03:40:52 by tjooris           #+#    #+#             */
-/*   Updated: 2025/02/05 13:28:46 by tjooris          ###   ########.fr       */
+/*   Updated: 2025/02/06 12:17:11 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
@@ -78,5 +76,7 @@ void	do_moves(t_node **stack_a, t_node **stack_b, t_node **node);
 void	find_best_push(t_node **stack_a, t_node **stack_b);
 void	prepare_stack_a(t_node **stack_a, t_node **b);
 void	ft_free_stack(t_node **stack, int size);
+char	**args_handler(int *ac, char **av);
+void	pile_down(t_node **stack, t_node *node);
 
 #endif

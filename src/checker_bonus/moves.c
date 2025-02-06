@@ -6,10 +6,9 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 09:18:17 by tjooris           #+#    #+#             */
-/*   Updated: 2025/02/05 16:55:19 by tjooris          ###   ########.fr       */
+/*   Updated: 2025/02/06 12:10:18 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "push_swap.h"
 #include "checker.h"

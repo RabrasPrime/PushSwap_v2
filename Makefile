@@ -6,7 +6,7 @@
 #    By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/20 14:10:16 by tjooris           #+#    #+#              #
-#    Updated: 2025/02/04 16:57:30 by tjooris          ###   ########.fr        #
+#    Updated: 2025/02/06 17:44:08 by tjooris          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,6 @@ SRC +=  $(addprefix $(5_DIR), $(5_SRC))
 5_DIR    =   5_numbers/
 5_SRC    =   sort_five_numbers.c
 
-
 #=-=-=-=-=-=-OTHER_NUMBER-=-=-=-=-=#
 
 SRC +=  $(addprefix $(OTHER_NUMBER_DIR), $(OTHER_NUMBER_SRC))
@@ -54,6 +53,23 @@ OTHER_NUMBER_SRC    =   big_sort.c \
                         find_sequence.c \
                         prepare_stack_a.c \
 
+#=-=-=-=-=-=-ARG-=-=-=-=-=#
+
+SRC +=  $(addprefix $(ARG_DIR), $(ARG_SRC))
+
+ARG_DIR    =   arg/
+ARG_SRC    =   arg_handler.c
+
+#=-=-=-=-=-=-BONUS-=-=-=-=-=#
+
+SRC_BONUS +=   $(addprefix $(BONUS_DIR), $(BONUS_SRC))
+
+BONUS_DIR   =   checker_bonus/
+BONUS_SRC   =   move.c \
+                push.c \
+                reverse_rotate.c \
+                rotate.c \
+                swap.c \
 
 #=-=-=-=-=-=-STACK-=-=-=-=-=#
 
@@ -62,6 +78,7 @@ SRC +=  $(addprefix $(STACK_DIR), $(STACK_SRC))
 STACK_DIR   =   stack_functions/
 STACK_SRC   =   ft_free_stack.c \
                 stack_utils.c \
+				stack_utils_2.c \
 
 #=-=-=-=-=-=-MOVE-=-=-=-=-=#
 
@@ -134,13 +151,21 @@ else ifneq ($(MODE),)
     ERROR = MODE
 endif
 
+ifneq ($(MODE), bonus)
+    SRC := $(filter-out $(addprefix $(BONUS_DIR), $(BONUS_SRC)), $(SRC))
+    BUILD_DIR := $(BUILD_DIR)normal/
+else
+    SRC := $(addprefix $(SRC_DIR), $(SRC_BONUS))
+    BUILD_DIR := $(BUILD_DIR)
+endif
+
 ifneq ($(LAST_MOD), $(MODE))
 $(NAME): force
 endif
 
 #=-=-=-=-=-=-CAST-=-=-=-=-=#
 
-.PHONY: all clean fclean $(MODE) re help
+.PHONY: all clean fclean $(MODE) re help bonus
 
 all: $(NAME)
 
@@ -152,10 +177,8 @@ $(BUILD_DIR)%.o: $(SRC_DIR)%.c $(LIB_PATH)
 	@mkdir -p $(@D)
 	$(CC) $(PPFLAGS) $(FLAGS) -c $< -o $@
 
-
 $(LIB_PATH): force
 	@$(MAKE) -C $(@D)
-
 
 .PHONY: clean
 clean:

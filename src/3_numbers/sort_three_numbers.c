@@ -6,10 +6,9 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 03:40:00 by tjooris           #+#    #+#             */
-/*   Updated: 2025/02/04 03:40:02 by tjooris          ###   ########.fr       */
+/*   Updated: 2025/02/06 12:25:20 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "push_swap.h"
 
@@ -53,7 +52,7 @@ void	sort_three_numbers(t_node **stack)
 	{
 		ra(stack, 1);
 		sa(stack, 1);
-	}	
+	}
 	else if (case_check(*stack) == 4)
 		ra(stack, 1);
 	else if (case_check(*stack) == 5)

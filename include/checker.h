@@ -6,15 +6,14 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 09:18:10 by tjooris           #+#    #+#             */
-/*   Updated: 2025/02/05 10:47:23 by tjooris          ###   ########.fr       */
+/*   Updated: 2025/02/06 15:01:17 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
 
 #ifndef CHECKER_H
 # define CHECKER_H
 
+# include "push_swap.h"
 # include "get_next_line.h"
 # include "libft.h"
 
@@ -28,7 +27,7 @@ void	rrb(t_node **stack, int a);
 void	rrr(t_node **stack_a, t_node **stack_b);
 void	pb(t_node **stack_a, t_node **stack_b);
 void	pa(t_node **stack_a, t_node **stack_b);
-void	pile_down(t_node *stack, t_node *node);
+void	pile_down(t_node **stack, t_node *node);
 void	do_moves_bonus(char *str, t_node **stack_a, t_node **stack_b);
 
 #endif

@@ -6,11 +6,9 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 03:41:39 by tjooris           #+#    #+#             */
-/*   Updated: 2025/02/04 03:41:39 by tjooris          ###   ########.fr       */
+/*   Updated: 2025/02/06 12:24:52 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
 
 #include "push_swap.h"
 
@@ -24,18 +22,20 @@ void	push_one(t_node **stack_a, t_node **stack_b)
 	current = *stack_b;
 	while (current->next != *stack_b)
 	{
-		if (current->sa + current->sb + current->ra 
+		if (current->sa + current->sb + current->ra
 			+ current->rb + current->rra + current->rrb < max)
 		{
-			max = current->sa + current->sb + current->ra  + current->rb + current->rra + current->rrb;
+			max = current->sa + current->sb + current->ra
+				+ current->rb + current->rra + current->rrb;
 			save = current;
 		}
 		current = current->next;
 	}
-	if (current->sa + current->sb + current->ra 
+	if (current->sa + current->sb + current->ra
 		+ current->rb + current->rra + current->rrb < max)
 	{
-		max = current->sa + current->sb + current->ra  + current->rb + current->rra + current->rrb;
+		max = current->sa + current->sb + current->ra
+			+ current->rb + current->rra + current->rrb;
 		save = current;
 	}
 	do_moves(stack_a, stack_b, &save);

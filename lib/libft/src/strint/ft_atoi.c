@@ -6,7 +6,7 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 13:19:51 by tjooris           #+#    #+#             */
-/*   Updated: 2025/02/05 11:31:32 by tjooris          ###   ########.fr       */
+/*   Updated: 2025/02/06 13:32:48 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,47 +19,52 @@ void	error(void)
 	exit(1);
 }
 
-
-int ft_atoi_preprocess(const char *nptr, int *sign)
+int	ft_atoi_preprocess(const char *nptr, int *sign)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    *sign = 1;
-    while (nptr[i] == ' ' || (nptr[i] >= 9 && nptr[i] <= 13))
-        i++;
-    if (nptr[i] == '-' || nptr[i] == '+')
-    {
-        if (nptr[i] == '-')
-            *sign = -1;
-        i++;
-    }
-    if (!nptr[i])
-        ft_error();
-    return i;
+	i = 0;
+	*sign = 1;
+	while (nptr[i] == ' ' || (nptr[i] >= 9 && nptr[i] <= 13))
+		i++;
+	if (nptr[i] == '-' || nptr[i] == '+')
+	{
+		if (nptr[i] == '-')
+			*sign = -1;
+		i++;
+	}
+	if (!nptr[i])
+		ft_error();
+	return (i);
 }
 
-int ft_atoi_convert(const char *nptr, int i, int sign)
+int	ft_atoi_convert(const char *nptr, int i, int sign)
 {
-    long result;
+	long	result;
 
-    result = 0;
-    while (nptr[i] >= '0' && nptr[i] <= '9')
-    {
-        if ((result > (LONG_MAX / 10)) || (result == (LONG_MAX / 10) && (nptr[i] - '0') > (LONG_MAX % 10)))
-            return (sign == 1 ? INT_MAX : INT_MIN);
-        result = result * 10 + (nptr[i] - '0');
-        i++;
-    }
-    if (nptr[i] != '\0')
-        ft_error();
-    return (int)(sign * result);
+	result = 0;
+	while (nptr[i] >= '0' && nptr[i] <= '9')
+	{
+		if ((result > (LONG_MAX / 10)) || (result == (LONG_MAX / 10)
+				&& (nptr[i] - '0') > (LONG_MAX % 10)))
+		{
+			if (sign == 1)
+				return (INT_MAX);
+			return (INT_MIN);
+		}
+		result = result * 10 + (nptr[i] - '0');
+		i++;
+	}
+	if (nptr[i] != '\0')
+		ft_error();
+	return ((int)(sign * result));
 }
-int ft_atoi(const char *nptr)
-{
-    int sign;
-    int i;
 
-    i = ft_atoi_preprocess(nptr, &sign);
-    return ft_atoi_convert(nptr, i, sign);
+int	ft_atoi(const char *nptr)
+{
+	int		sign;
+	int		i;
+
+	i = ft_atoi_preprocess(nptr, &sign);
+	return (ft_atoi_convert(nptr, i, sign));
 }

@@ -6,79 +6,12 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 03:40:56 by tjooris           #+#    #+#             */
-/*   Updated: 2025/02/05 17:31:44 by tjooris          ###   ########.fr       */
+/*   Updated: 2025/02/06 12:13:21 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
 #include "push_swap.h"
 #include "libft.h"
-
-void	test_one_arg(char *str, char **array)
-{
-	int	i;
-
-	if ((str[0] == '-' && str[1] == '\0') || (str[0] == '+' && str[1] == '\0'))
-	{
-		ft_free_array(array);
-		error();
-	}
-	if (!(str[0] == '-' || str[0] == '+' || (str[0] >= 48 && str[0] <= 57)))
-	{
-		ft_free_array(array);
-		error();
-	}
-	i = 0;
-	while (str[++i])
-	{
-		if (!(str[i] >= 48 && str[i] <= 57))
-		{
-			ft_free_array(array);
-			error();
-		}
-	}
-	ft_atoi(str);
-	ft_free_array(array);
-	exit(0);
-}
-
-char	**args_handler(int *ac, char **av)
-{
-	char	**array;
-	int		i;
-
-	if (*ac < 2)
-		exit(1);
-	else if (*ac == 2)
-	{
-		array = ft_split(av[1], ' ');
-		if (!array || !array[0])
-			ft_error();
-		else if (!array[1])
-			test_one_arg(array[0], array);
-		*ac = ft_array_size(array);
-	}
-	else
-	{
-		i = 0;
-		array = malloc(sizeof(char *) * (*ac));
-		if (!array)
-			return (NULL);
-		while (++i < *ac)
-		{
-			array[i - 1] = ft_strdup(av[i]);
-			if (!array[i - 1])
-			{
-				ft_free_array(array);
-				error();
-			}
-		}
-		array[i - 1] = NULL;
-		(*ac)--;
-	}
-	return (array);
-}
 
 void	order_checker(t_node *stack)
 {

@@ -5,10 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/01 21:17:54 by juliencauch       #+#    #+#             */
-/*   Updated: 2025/02/05 10:47:59 by tjooris          ###   ########.fr       */
+/*   Created: 2025/02/06 13:46:09 by tjooris           #+#    #+#             */
+/*   Updated: 2025/02/06 15:01:01 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+
 
 #include "checker.h"
 #include "push_swap.h"
@@ -82,7 +84,7 @@ t_node	*stack_a_init(t_node *stack, char **array)
 	stack->prev = stack;
 	i = 1;
 	while (array[i])
-		pile_down(stack, create_node(ft_atoi(array[i++])));
+		pile_down(&stack, create_node(ft_atoi(array[i++])));
 	return (stack);
 }
 

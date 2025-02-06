@@ -6,7 +6,7 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 14:15:03 by tjooris           #+#    #+#             */
-/*   Updated: 2025/02/03 21:14:39 by tjooris          ###   ########.fr       */
+/*   Updated: 2025/02/06 12:17:43 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int		ft_isalnum(int c);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
 void	ft_free_array(char **array);
-int	ft_array_size(char	**array);
+int		ft_array_size(char	**array);
 void	error(void);
 
 /*=-=-=-=-=-=-=-=-MEM-=-=-=-=-=-=-=-=*/
@@ -75,7 +75,7 @@ char	**ft_split(char *s, char c);
 char	*ft_itoa(int n);
 void	ft_swap(int *a, int *b);
 void	ft_freestr(char	**str);
-int	ft_tablen(char	**tab);
+int		ft_tablen(char	**tab);
 
 /*=-=-=-=-=-=-=-=-LST-=-=-=-=-=-=-=-=*/
 
@@ -91,6 +91,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 /*=-=-=-=-=-=-=-=-ERROR-=-=-=-=-=-=-=-=*/
 
-void	ft_error();
+void	ft_error(void);
 
 #endif

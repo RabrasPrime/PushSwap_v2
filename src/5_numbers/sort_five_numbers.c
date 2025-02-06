@@ -6,11 +6,9 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 03:40:46 by tjooris           #+#    #+#             */
-/*   Updated: 2025/02/04 03:40:47 by tjooris          ###   ########.fr       */
+/*   Updated: 2025/02/06 12:42:42 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
 
 #include "push_swap.h"
 
@@ -97,26 +95,26 @@ void	push_rules_2(t_node **stack_a, t_node **stack_b)
 void	sort_five_numbers(t_node **stack_a, t_node **stack_b)
 {
 	if (stack_size(*stack_a) == 4)
-    {
-        if ((*stack_a)->nb < (*stack_a)->next->nb
+	{
+		if ((*stack_a)->nb < (*stack_a)->next->nb
 			&& (*stack_a)->next->nb < (*stack_a)->next->next->nb
 			&& (*stack_a)->prev->nb > (*stack_a)->prev->prev->nb)
 			return ;
-        pb(stack_a, stack_b);
-        sort_three_numbers(stack_a);
-        push_rules_1(stack_a, stack_b, 4);
-    }
-    else
-    {
-        if (((*stack_a)->nb < (*stack_a)->next->nb)
+		pb(stack_a, stack_b);
+		sort_three_numbers(stack_a);
+		push_rules_1(stack_a, stack_b, 4);
+	}
+	else
+	{
+		if (((*stack_a)->nb < (*stack_a)->next->nb)
 			&& ((*stack_a)->next->nb < (*stack_a)->next->next->nb)
 			&& ((*stack_a)->next->next->nb < (*stack_a)->prev->prev->nb)
 			&& ((*stack_a)->prev->prev->nb < (*stack_a)->prev->nb))
 			return ;
-        pb(stack_a, stack_b);
-        pb(stack_a, stack_b);
-        sort_three_numbers(stack_a);
-        if (push_rules_1(stack_a, stack_b, 5))
-            push_rules_2(stack_a, stack_b);
-    }
+		pb(stack_a, stack_b);
+		pb(stack_a, stack_b);
+		sort_three_numbers(stack_a);
+		if (push_rules_1(stack_a, stack_b, 5))
+			push_rules_2(stack_a, stack_b);
+	}
 }

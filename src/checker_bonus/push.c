@@ -5,10 +5,11 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/24 09:34:32 by juliencauch       #+#    #+#             */
-/*   Updated: 2025/02/05 16:55:27 by tjooris          ###   ########.fr       */
+/*   Created: 2025/02/06 13:45:53 by tjooris           #+#    #+#             */
+/*   Updated: 2025/02/06 13:45:55 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "push_swap.h"
 
@@ -58,7 +59,7 @@ void	pb(t_node **stack_a, t_node **stack_b)
 	(*stack_a)->prev = node->prev;
 	(*stack_a)->prev->next = *stack_a;
 	if (!(*stack_b))
-	{	
+	{
 		node->prev = node;
 		node->next = node;
 		*stack_b = node;

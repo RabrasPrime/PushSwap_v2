@@ -6,11 +6,9 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 03:41:05 by tjooris           #+#    #+#             */
-/*   Updated: 2025/02/05 13:16:19 by tjooris          ###   ########.fr       */
+/*   Updated: 2025/02/06 11:53:17 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
 
 #include "push_swap.h"
 
@@ -31,6 +29,5 @@ void	ft_free_stack(t_node **stack, int size)
 		node = temp;
 		i++;
 	}
-	*stack = NULL; // Sécurisation pour éviter d'accéder à une mémoire libérée
+	*stack = NULL;
 }
-

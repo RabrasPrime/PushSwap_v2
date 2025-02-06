@@ -6,10 +6,9 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 03:40:21 by tjooris           #+#    #+#             */
-/*   Updated: 2025/02/04 03:40:22 by tjooris          ###   ########.fr       */
+/*   Updated: 2025/02/06 12:22:00 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "push_swap.h"
 
@@ -56,7 +55,7 @@ void	do_moves_1(t_node **stack_a, t_node **stack_b, t_node **node)
 	{
 		rb(stack_b, 1);
 		(*node)->rb--;
-	}	
+	}
 	while ((*node)->rrb)
 	{
 		rrb(stack_b, 1);

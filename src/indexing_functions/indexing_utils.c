@@ -6,26 +6,24 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 03:41:28 by tjooris           #+#    #+#             */
-/*   Updated: 2025/02/04 03:41:29 by tjooris          ###   ########.fr       */
+/*   Updated: 2025/02/06 12:35:29 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
 
 #include "push_swap.h"
 
 void	prepare_swap_index(int max, t_node **node, int a)
 {
 	if (a)
-    {
-        while ((*node)->index != max)
-            *node = (*node)->next;
-    }
-    else
-    {
-        while ((*node)->index != max)
-            *node = (*node)->prev;
-    }
+	{
+		while ((*node)->index != max)
+			*node = (*node)->next;
+	}
+	else
+	{
+		while ((*node)->index != max)
+			*node = (*node)->prev;
+	}
 }
 
 int	partition(t_node *stack, int *array, int start, int end)
@@ -39,9 +37,9 @@ int	partition(t_node *stack, int *array, int start, int end)
 	j = 0;
 	while (end - j > start + i)
 	{
-		while ((array[start] > array[start + i]))
+		while (array[start] > array[start + i])
 			i++;
-		while ((array[start] < array[end - j]))
+		while (array[start] < array[end - j])
 			j++;
 		if (end - j < start + i)
 			break ;
@@ -58,14 +56,14 @@ int	partition(t_node *stack, int *array, int start, int end)
 
 void	quicksort(t_node *stack, int *array, int start, int end)
 {
-	int pillar;
+	int	pillar;
 
-    if (start < end)
-    {
-        pillar = partition(stack, array, start, end);
-        quicksort(stack, array, start, pillar - 1);
-        quicksort(stack, array, pillar + 1, end);
-    }
+	if (start < end)
+	{
+		pillar = partition(stack, array, start, end);
+		quicksort(stack, array, start, pillar - 1);
+		quicksort(stack, array, pillar + 1, end);
+	}
 }
 
 void	index_init(t_node *stack)
