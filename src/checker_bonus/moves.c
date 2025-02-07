@@ -6,7 +6,7 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 09:18:17 by tjooris           #+#    #+#             */
-/*   Updated: 2025/02/06 12:10:18 by tjooris          ###   ########.fr       */
+/*   Updated: 2025/02/07 13:40:04 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	do_moves_bonus(char *str, t_node **stack_a, t_node **stack_b)
 		error();
 }
 
-void	pile_down(t_node *stack, t_node *node)
+void	piles_down(t_node *stack, t_node *node)
 {
 	t_node	*head;
 

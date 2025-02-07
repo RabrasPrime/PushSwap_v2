@@ -6,7 +6,7 @@
 #    By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/20 14:10:16 by tjooris           #+#    #+#              #
-#    Updated: 2025/02/07 11:40:58 by tjooris          ###   ########.fr        #
+#    Updated: 2025/02/07 14:47:58 by tjooris          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -81,6 +81,7 @@ BONUS_SRC   =   moves.c \
 #=-=-=-=-=-=-STACK-=-=-=-=-=#
 
 SRC +=  $(addprefix $(STACK_DIR), $(STACK_SRC))
+SRC_BONUS +=  $(addprefix $(STACK_DIR), $(STACK_SRC))
 
 STACK_DIR   =   stack_functions/
 STACK_SRC   =   ft_free_stack.c \
@@ -156,9 +157,6 @@ else ifeq ($(MODE), full-optimize)
     FLAGS += -O3
 else ifneq ($(MODE),)
     ERROR = MODE
-else ifeq ($(MODE), bonus)
-    SRC := $(SRC_BONUS)
-    NAME = $(NAME_BONUS)
 endif
 
 
@@ -175,6 +173,10 @@ all: $(NAME)
 $(NAME): $(OBJS) $(LIB_PATH)
 	@echo $(MODE) > $(MODES_TRACE)
 	$(CC) $(FLAGS) $(OBJS) $(LDFLAGS) $(LDLIB) -o $(NAME)
+
+$(NAME_BONUS): $(OBJS_BONUS) $(OBJS) $(LIB_PATH)
+	@echo $(MODE) > $(MODES_TRACE)
+	$(CC) $(FLAGS) $(OBJS_BONUS) $(LDFLAGS) $(LDLIB) -o $(NAME_BONUS)
 
 $(BUILD_DIR)%.o: $(SRC_DIR)%.c $(LIB_PATH)
 	@mkdir -p $(@D)
@@ -196,6 +198,9 @@ fclean:
 .PHONY: re
 re: fclean
 	$(MAKE)
+
+.PHONY: bonus
+bonus: $(NAME_BONUS)
 
 help:
 	@echo "Usage: make [target]"

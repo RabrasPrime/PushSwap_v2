@@ -6,15 +6,13 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 13:46:09 by tjooris           #+#    #+#             */
-/*   Updated: 2025/02/07 11:25:21 by tjooris          ###   ########.fr       */
+/*   Updated: 2025/02/07 14:51:15 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 
-#include "checker.h"
-#include "push_swap.h"
-#include "get_next_line.h"
+#include "../include/checker.h"
 
 int	check_good_sort(t_node *stack_a, t_node *stack_b)
 {
@@ -33,7 +31,7 @@ int	check_good_sort(t_node *stack_a, t_node *stack_b)
 		return (0);
 	return (1);
 }
-
+/*
 t_node	*create_node(int value)
 {
 	t_node	*node;
@@ -45,7 +43,7 @@ t_node	*create_node(int value)
 	node->rra = 0;
 	node->rrb = 0;
 	return (node);
-}
+}*/
 
 char	**args_handler(int *ac, char **av)
 {
@@ -75,7 +73,7 @@ char	**args_handler(int *ac, char **av)
 	}
 	return (array);
 }
-
+/*
 t_node	*stack_a_init(t_node *stack, char **array)
 {
 	int	i;
@@ -87,7 +85,7 @@ t_node	*stack_a_init(t_node *stack, char **array)
 	while (array[i])
 		pile_down(&stack, create_node(ft_atoi(array[i++])));
 	return (stack);
-}
+}*/
 
 int	main(int ac, char **av)
 {
