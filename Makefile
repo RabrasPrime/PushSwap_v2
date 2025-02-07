@@ -6,11 +6,13 @@
 #    By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/20 14:10:16 by tjooris           #+#    #+#              #
-#    Updated: 2025/02/06 17:44:08 by tjooris          ###   ########.fr        #
+#    Updated: 2025/02/07 11:40:58 by tjooris          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
+
+NAME_BONUS = checker
 
 #=-=-=-=-=-=-FILES-=-=-=-=-=-=#
 
@@ -23,9 +25,14 @@ SRC_DIR     =   src/
 OBJS        =   $(patsubst %.c, $(BUILD_DIR)%.o, $(SRC))
 DEPS        =   $(patsubst %.c, $(BUILD_DIR)%.d, $(SRC))
 
+OBJS_BONUS        =   $(patsubst %.c, $(BUILD_DIR)%.o, $(SRC_BONUS))
+DEPS_BONUS        =   $(patsubst %.c, $(BUILD_DIR)%.d, $(SRC_BONUS))
+
 #=-=-=-=-=-=-ROOT-=-=-=-=-=#
 
 SRC =   main.c
+
+SRC_BONUS = checker.c
 
 #=-=-=-=-=-=-3-=-=-=-=-=#
 
@@ -65,7 +72,7 @@ ARG_SRC    =   arg_handler.c
 SRC_BONUS +=   $(addprefix $(BONUS_DIR), $(BONUS_SRC))
 
 BONUS_DIR   =   checker_bonus/
-BONUS_SRC   =   move.c \
+BONUS_SRC   =   moves.c \
                 push.c \
                 reverse_rotate.c \
                 rotate.c \
@@ -149,15 +156,11 @@ else ifeq ($(MODE), full-optimize)
     FLAGS += -O3
 else ifneq ($(MODE),)
     ERROR = MODE
+else ifeq ($(MODE), bonus)
+    SRC := $(SRC_BONUS)
+    NAME = $(NAME_BONUS)
 endif
 
-ifneq ($(MODE), bonus)
-    SRC := $(filter-out $(addprefix $(BONUS_DIR), $(BONUS_SRC)), $(SRC))
-    BUILD_DIR := $(BUILD_DIR)normal/
-else
-    SRC := $(addprefix $(SRC_DIR), $(SRC_BONUS))
-    BUILD_DIR := $(BUILD_DIR)
-endif
 
 ifneq ($(LAST_MOD), $(MODE))
 $(NAME): force
@@ -188,7 +191,7 @@ clean:
 .PHONY: fclean
 fclean:
 	-for lib in $(dir $(LIB_PATH)); do $(MAKE) -s -C $$lib $@; done
-	rm -rf $(MAKE_DIR) $(NAME)
+	rm -rf $(MAKE_DIR) $(NAME) $(NAME_BONUS)
 
 .PHONY: re
 re: fclean

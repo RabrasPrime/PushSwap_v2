@@ -6,7 +6,7 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 13:46:09 by tjooris           #+#    #+#             */
-/*   Updated: 2025/02/06 15:01:01 by tjooris          ###   ########.fr       */
+/*   Updated: 2025/02/07 11:25:21 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 #include "checker.h"
 #include "push_swap.h"
+#include "get_next_line.h"
 
 int	check_good_sort(t_node *stack_a, t_node *stack_b)
 {
