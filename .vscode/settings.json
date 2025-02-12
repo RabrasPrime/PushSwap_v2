@@ -1,8 +1,0 @@
-{
-	"files.associations": {
-		"checker.h": "c",
-		"get_next_line.h": "c",
-		"struct.h": "c",
-		"stdlib.h": "c"
-	}
-}
