@@ -6,11 +6,14 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 03:41:34 by tjooris           #+#    #+#             */
-/*   Updated: 2025/02/06 12:10:10 by tjooris          ###   ########.fr       */
+/*   Updated: 2025/02/12 15:41:50 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "struct.h"
+#include "stdlib.h"
+#include "utils.h"
+#include "stack.h"
 
 void	find_spot(t_max **max, int i, t_node **b, t_node *a)
 {

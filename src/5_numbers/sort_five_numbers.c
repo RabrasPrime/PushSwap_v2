@@ -6,11 +6,14 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 03:40:46 by tjooris           #+#    #+#             */
-/*   Updated: 2025/02/06 12:42:42 by tjooris          ###   ########.fr       */
+/*   Updated: 2025/02/12 16:01:25 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "struct.h"
+#include "move.h"
+#include "stack.h"
+#include "sort.h"
 
 int	size_five(t_node **stack_a, t_node **stack_b, int size)
 {

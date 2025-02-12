@@ -6,11 +6,13 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 03:40:00 by tjooris           #+#    #+#             */
-/*   Updated: 2025/02/06 12:25:20 by tjooris          ###   ########.fr       */
+/*   Updated: 2025/02/12 16:01:20 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "struct.h"
+#include "stack.h"
+#include "move.h"
 
 int	case_check(t_node *stack)
 {

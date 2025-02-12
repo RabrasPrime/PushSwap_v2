@@ -6,11 +6,13 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 03:41:24 by tjooris           #+#    #+#             */
-/*   Updated: 2025/02/06 11:55:02 by tjooris          ###   ########.fr       */
+/*   Updated: 2025/02/12 15:31:20 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "struct.h"
+#include "stdlib.h"
+#include "unistd.h"
 
 void	pointers_init(t_node **l, t_node **n, t_node **s, t_node **stack)
 {

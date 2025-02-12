@@ -6,11 +6,13 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 11:37:50 by tjooris           #+#    #+#             */
-/*   Updated: 2025/02/12 15:03:32 by tjooris          ###   ########.fr       */
+/*   Updated: 2025/02/12 16:01:31 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "stdlib.h"
+#include "libft.h"
+#include "stack.h"
 
 static void	test_one_arg(char *str, char **array)
 {
@@ -19,12 +21,12 @@ static void	test_one_arg(char *str, char **array)
 	if ((str[0] == '-' && str[1] == '\0') || (str[0] == '+' && str[1] == '\0'))
 	{
 		ft_free_array(array);
-		error();
+		ft_error();
 	}
 	if (!(str[0] == '-' || str[0] == '+' || (str[0] >= 48 && str[0] <= 57)))
 	{
 		ft_free_array(array);
-		error();
+		ft_error();
 	}
 	i = 0;
 	while (str[++i])
@@ -32,7 +34,7 @@ static void	test_one_arg(char *str, char **array)
 		if (!(str[i] >= 48 && str[i] <= 57))
 		{
 			ft_free_array(array);
-			error();
+			ft_error();
 		}
 	}
 	ft_atoi(str);
@@ -72,7 +74,7 @@ char	**handle_multiple_arguments(int ac, char **av)
 		if (!array[i - 1])
 		{
 			ft_free_array(array);
-			error();
+			ft_error();
 		}
 	}
 	array[i - 1] = NULL;

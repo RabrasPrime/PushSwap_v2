@@ -6,13 +6,16 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 03:41:28 by tjooris           #+#    #+#             */
-/*   Updated: 2025/02/06 12:35:29 by tjooris          ###   ########.fr       */
+/*   Updated: 2025/02/12 15:33:52 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "struct.h"
+#include "stdlib.h"
+#include "libft.h"
+#include "stack.h"
 
-void	prepare_swap_index(int max, t_node **node, int a)
+static void	prepare_swap_index(int max, t_node **node, int a)
 {
 	if (a)
 	{
@@ -26,7 +29,7 @@ void	prepare_swap_index(int max, t_node **node, int a)
 	}
 }
 
-int	partition(t_node *stack, int *array, int start, int end)
+static int	partition(t_node *stack, int *array, int start, int end)
 {
 	int		i;
 	int		j;

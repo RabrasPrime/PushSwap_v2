@@ -6,7 +6,7 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 03:40:52 by tjooris           #+#    #+#             */
-/*   Updated: 2025/02/12 14:47:19 by tjooris          ###   ########.fr       */
+/*   Updated: 2025/02/12 15:54:55 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,90 +14,9 @@
 # define PUSH_SWAP_H
 
 # include "libft.h"
-
-/*=-=-=-=-=-=-=-=-=-STRUCTURES-=-=-=-=-=-=-=-=-=*/
-
-typedef struct s_node
-{
-	int				nb;
-	int				index;
-	int				value;
-	int				sa;
-	int				sb;
-	int				ra;
-	int				rb;
-	int				rra;
-	int				rrb;
-	int				move;
-	struct s_node	*next;
-	struct s_node	*prev;
-}	t_node;
-
-typedef struct s_seq
-{
-	int		curr_len;
-	int		max_len;
-	int		index;
-	int		max_index;
-	int		start;
-}	t_seq;
-
-typedef struct s_max
-{
-	int		nb;
-	int		size;
-}	t_max;
-
-/*=-=-=-=-=-=-=-=-=-STACK FUNCTIONS-=-=-=-=-=-=-=-=-=*/
-
-t_node	*stack_a_init(t_node *stack, char **array);
-t_node	*create_node(int value);
-void	pile_down(t_node **stack, t_node *node);
-int		stack_size(t_node *stack);
-int		*stack_dup(int *array, t_node *stack);
-void	index_init(t_node *stack);
-void	ft_free_stack(t_node **stack, int size);
-void	ft_free_stack_and_array_error(t_node **stack, char **array);
-void	ft_free_array_error(char **array);
-
-/*=-=-=-=-=-=-=-=-=-SORTING FUNCTIONS-=-=-=-=-=-=-=-=-=*/
-
-void	quicksort(t_node *stack, int *array, int start, int end);
-void	sort_three_numbers(t_node **stack);
-void	sort_five_numbers(t_node **stack_a, t_node **stack_b);
-void	big_sort(t_node **stack_a, t_node **stack_b);
-
-/*=-=-=-=-=-=-=-=-=-MOVES-=-=-=-=-=-=-=-=-=*/
-
-void	sa(t_node **stack, int a);
-void	sb(t_node **stack, int a);
-void	ra(t_node **stack, int a);
-void	rb(t_node **stack, int a);
-void	rr(t_node **stack_a, t_node **stack_b);
-void	rra(t_node **stack, int a);
-void	rrb(t_node **stack, int a);
-void	rrr(t_node **stack_a, t_node **stack_b);
-void	pb(t_node **stack_a, t_node **stack_b);
-void	pa(t_node **stack_a, t_node **stack_b);
-
-/*=-=-=-=-=-=-=-=-=-SEQUENCES-=-=-=-=-=-=-=-=-=*/
-
-t_seq	*sequence(t_node **stack);
-void	markup(t_node **stack_a, t_seq *seq);
-
-/*=-=-=-=-=-=-=-=-=-MOVEMENT OPTIMIZATION-=-=-=-=-=-=-=-=-=*/
-
-void	moves_init(t_node **stack_a, int n);
-void	do_moves(t_node **stack_a, t_node **stack_b, t_node **node);
-void	find_best_push(t_node **stack_a, t_node **stack_b);
-void	prepare_stack_a(t_node **stack_a, t_node **b);
-
-/*=-=-=-=-=-=-=-=-=-ARGUMENT HANDLING-=-=-=-=-=-=-=-=-=*/
-
-char	**args_handler(int *ac, char **av);
-
-/*=-=-=-=-=-=-=-=-=-UTILITY FUNCTIONS-=-=-=-=-=-=-=-=-=*/
-
-int		is_max(t_node *stack_a, t_node *b);
+# include "struct.h"
+# include "arg.h"
+# include "sort.h"
+# include "stack.h"
 
 #endif

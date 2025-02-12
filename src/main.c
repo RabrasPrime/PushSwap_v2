@@ -6,7 +6,7 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 03:40:56 by tjooris           #+#    #+#             */
-/*   Updated: 2025/02/12 14:47:30 by tjooris          ###   ########.fr       */
+/*   Updated: 2025/02/12 15:58:59 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int	main(int ac, char **av)
 
 	if (av[1])
 		if (!av[1][0])
-			error();
+			ft_error();
 	stack_a = NULL;
 	array = NULL;
 	array = args_handler(&ac, av);

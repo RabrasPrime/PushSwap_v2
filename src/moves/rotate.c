@@ -6,11 +6,13 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 03:41:13 by tjooris           #+#    #+#             */
-/*   Updated: 2025/02/06 11:53:59 by tjooris          ###   ########.fr       */
+/*   Updated: 2025/02/12 15:31:54 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "struct.h"
+#include "move.h"
+#include "unistd.h"
 
 void	ra(t_node **stack, int a)
 {

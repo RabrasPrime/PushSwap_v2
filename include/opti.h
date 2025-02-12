@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.h                                          :+:      :+:    :+:   */
+/*   opti.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/05 09:18:10 by tjooris           #+#    #+#             */
-/*   Updated: 2025/02/12 15:52:31 by tjooris          ###   ########.fr       */
+/*   Created: 2025/02/12 15:20:50 by tjooris           #+#    #+#             */
+/*   Updated: 2025/02/12 15:23:35 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHECKER_H
-# define CHECKER_H
-
+#ifndef OPTI_H
+# define OPTI_H
 # include "struct.h"
-# include "stack.h"
-# include "arg.h"
-# include "get_next_line.h"
-# include "libft.h"
 
-/*=-=-=-=-=-=-=-=-=-STACK FUNCTIONS-=-=-=-=-=-=-=-=-=*/
+/*=-=-=-=-=-=-=-=-=-MOVEMENT OPTIMIZATION-=-=-=-=-=-=-=-=-=*/
 
-void	pile_down(t_node **stack, t_node *node);
-
-/*=-=-=-=-=-=-=-=-=-BONUS FUNCTIONS-=-=-=-=-=-=-=-=-=*/
-
-void	do_moves_bonus(char *str, t_node **stack_a, t_node **stack_b);
+void	moves_init(t_node **stack_a, int n);
+void	do_moves(t_node **stack_a, t_node **stack_b, t_node **node);
+void	find_best_push(t_node **stack_a, t_node **stack_b);
+void	prepare_stack_a(t_node **stack_a, t_node **b);
 
 #endif

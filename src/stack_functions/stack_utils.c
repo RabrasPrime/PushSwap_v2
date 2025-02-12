@@ -6,7 +6,7 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 03:41:00 by tjooris           #+#    #+#             */
-/*   Updated: 2025/02/12 14:47:42 by tjooris          ###   ########.fr       */
+/*   Updated: 2025/02/12 15:59:21 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ t_node	*stack_a_init(t_node *stack, char **array)
 		if (!stack)
 		{
 			ft_free_array(array);
-			error();
+			ft_error();
 		}
 	}
 	return (stack);

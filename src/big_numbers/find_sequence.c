@@ -6,11 +6,12 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 09:06:20 by juliencauch       #+#    #+#             */
-/*   Updated: 2025/02/04 03:42:25 by tjooris          ###   ########.fr       */
+/*   Updated: 2025/02/12 15:41:08 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "struct.h"
+#include "stdlib.h"
 
 void	markup_init(t_node **stack_a)
 {

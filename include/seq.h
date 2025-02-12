@@ -1,30 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.h                                          :+:      :+:    :+:   */
+/*   seq.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/05 09:18:10 by tjooris           #+#    #+#             */
-/*   Updated: 2025/02/12 15:52:31 by tjooris          ###   ########.fr       */
+/*   Created: 2025/02/12 15:19:46 by tjooris           #+#    #+#             */
+/*   Updated: 2025/02/12 15:23:22 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHECKER_H
-# define CHECKER_H
-
+#ifndef SEQ_H
+# define SEQ_H
 # include "struct.h"
-# include "stack.h"
-# include "arg.h"
-# include "get_next_line.h"
-# include "libft.h"
 
-/*=-=-=-=-=-=-=-=-=-STACK FUNCTIONS-=-=-=-=-=-=-=-=-=*/
+/*=-=-=-=-=-=-=-=-=-SEQUENCES-=-=-=-=-=-=-=-=-=*/
 
-void	pile_down(t_node **stack, t_node *node);
-
-/*=-=-=-=-=-=-=-=-=-BONUS FUNCTIONS-=-=-=-=-=-=-=-=-=*/
-
-void	do_moves_bonus(char *str, t_node **stack_a, t_node **stack_b);
+t_seq	*sequence(t_node **stack);
+void	markup(t_node **stack_a, t_seq *seq);
 
 #endif

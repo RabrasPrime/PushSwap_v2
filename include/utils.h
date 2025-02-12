@@ -1,30 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.h                                          :+:      :+:    :+:   */
+/*   utils.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/05 09:18:10 by tjooris           #+#    #+#             */
-/*   Updated: 2025/02/12 15:52:31 by tjooris          ###   ########.fr       */
+/*   Created: 2025/02/12 15:21:56 by tjooris           #+#    #+#             */
+/*   Updated: 2025/02/12 15:22:30 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHECKER_H
-# define CHECKER_H
-
+#ifndef UTILS_H
+# define UTILS_H
 # include "struct.h"
-# include "stack.h"
-# include "arg.h"
-# include "get_next_line.h"
-# include "libft.h"
 
-/*=-=-=-=-=-=-=-=-=-STACK FUNCTIONS-=-=-=-=-=-=-=-=-=*/
+/*=-=-=-=-=-=-=-=-=-UTILITY FUNCTIONS-=-=-=-=-=-=-=-=-=*/
 
-void	pile_down(t_node **stack, t_node *node);
-
-/*=-=-=-=-=-=-=-=-=-BONUS FUNCTIONS-=-=-=-=-=-=-=-=-=*/
-
-void	do_moves_bonus(char *str, t_node **stack_a, t_node **stack_b);
+int		is_max(t_node *stack_a, t_node *b);
 
 #endif

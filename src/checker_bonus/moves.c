@@ -6,12 +6,13 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 09:18:17 by tjooris           #+#    #+#             */
-/*   Updated: 2025/02/07 13:40:04 by tjooris          ###   ########.fr       */
+/*   Updated: 2025/02/12 16:00:13 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include "checker.h"
+#include "struct.h"
+#include "libft.h"
+#include "move.h"
 
 void	rrr_bonus(t_node **stack_a, t_node **stack_b)
 {
@@ -50,7 +51,7 @@ void	do_moves_bonus(char *str, t_node **stack_a, t_node **stack_b)
 	else if (!ft_strncmp(str, "pb\n", 3))
 		pb(stack_a, stack_b);
 	else
-		error();
+		ft_error();
 }
 
 void	piles_down(t_node *stack, t_node *node)
@@ -61,11 +62,11 @@ void	piles_down(t_node *stack, t_node *node)
 	while (head->next != stack)
 	{
 		if (head->nb == node->nb)
-			error();
+			ft_error();
 		head = head->next;
 	}
 	if (head->nb == node->nb)
-		error();
+		ft_error();
 	if (stack->next == stack && stack->prev == stack)
 	{
 		stack->next = node;

@@ -1,30 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.h                                          :+:      :+:    :+:   */
+/*   arg.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/05 09:18:10 by tjooris           #+#    #+#             */
-/*   Updated: 2025/02/12 15:52:31 by tjooris          ###   ########.fr       */
+/*   Created: 2025/02/12 15:12:52 by tjooris           #+#    #+#             */
+/*   Updated: 2025/02/12 15:23:57 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHECKER_H
-# define CHECKER_H
+#ifndef ARG_H
+# define ARG_H
 
 # include "struct.h"
-# include "stack.h"
-# include "arg.h"
-# include "get_next_line.h"
-# include "libft.h"
 
-/*=-=-=-=-=-=-=-=-=-STACK FUNCTIONS-=-=-=-=-=-=-=-=-=*/
+/*=-=-=-=-=-=-=-=-=-ARGUMENT HANDLING-=-=-=-=-=-=-=-=-=*/
 
-void	pile_down(t_node **stack, t_node *node);
-
-/*=-=-=-=-=-=-=-=-=-BONUS FUNCTIONS-=-=-=-=-=-=-=-=-=*/
-
-void	do_moves_bonus(char *str, t_node **stack_a, t_node **stack_b);
+char	**args_handler(int *ac, char **av);
 
 #endif

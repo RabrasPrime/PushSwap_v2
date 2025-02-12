@@ -6,11 +6,13 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 03:41:39 by tjooris           #+#    #+#             */
-/*   Updated: 2025/02/06 12:24:52 by tjooris          ###   ########.fr       */
+/*   Updated: 2025/02/12 15:40:27 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "struct.h"
+#include "stack.h"
+#include "opti.h"
 
 void	push_one(t_node **stack_a, t_node **stack_b)
 {

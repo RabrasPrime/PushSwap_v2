@@ -6,7 +6,7 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 14:15:03 by tjooris           #+#    #+#             */
-/*   Updated: 2025/02/06 12:17:43 by tjooris          ###   ########.fr       */
+/*   Updated: 2025/02/12 16:02:52 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ int		ft_isascii(int c);
 int		ft_isprint(int c);
 void	ft_free_array(char **array);
 int		ft_array_size(char	**array);
-void	error(void);
 
 /*=-=-=-=-=-=-=-=-MEM-=-=-=-=-=-=-=-=*/
 

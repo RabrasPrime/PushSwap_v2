@@ -6,11 +6,11 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 03:40:08 by tjooris           #+#    #+#             */
-/*   Updated: 2025/02/06 12:12:25 by tjooris          ###   ########.fr       */
+/*   Updated: 2025/02/12 16:01:33 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "big_sort.h"
 
 void	check_last_index(t_node **stack, t_node *node, t_max *max, int j)
 {

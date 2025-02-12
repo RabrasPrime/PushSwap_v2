@@ -6,11 +6,11 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 03:40:16 by tjooris           #+#    #+#             */
-/*   Updated: 2025/02/06 12:12:29 by tjooris          ###   ########.fr       */
+/*   Updated: 2025/02/12 15:37:43 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "struct.h"
 
 int	find_index(t_node *stack_a, t_node *b, int max, t_node *node)
 {

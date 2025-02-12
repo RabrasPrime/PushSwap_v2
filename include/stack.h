@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.h                                          :+:      :+:    :+:   */
+/*   stack.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/05 09:18:10 by tjooris           #+#    #+#             */
-/*   Updated: 2025/02/12 15:52:31 by tjooris          ###   ########.fr       */
+/*   Created: 2025/02/12 15:15:23 by tjooris           #+#    #+#             */
+/*   Updated: 2025/02/12 15:22:56 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHECKER_H
-# define CHECKER_H
-
+#ifndef STACK_H
+# define STACK_H
 # include "struct.h"
-# include "stack.h"
-# include "arg.h"
-# include "get_next_line.h"
-# include "libft.h"
 
 /*=-=-=-=-=-=-=-=-=-STACK FUNCTIONS-=-=-=-=-=-=-=-=-=*/
 
+t_node	*stack_a_init(t_node *stack, char **array);
+t_node	*create_node(int value);
 void	pile_down(t_node **stack, t_node *node);
-
-/*=-=-=-=-=-=-=-=-=-BONUS FUNCTIONS-=-=-=-=-=-=-=-=-=*/
-
-void	do_moves_bonus(char *str, t_node **stack_a, t_node **stack_b);
+int		stack_size(t_node *stack);
+int		*stack_dup(int *array, t_node *stack);
+void	index_init(t_node *stack);
+void	ft_free_stack(t_node **stack, int size);
+void	ft_free_stack_and_array_error(t_node **stack, char **array);
+void	ft_free_array_error(char **array);
 
 #endif
