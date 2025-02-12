@@ -6,12 +6,11 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 03:40:56 by tjooris           #+#    #+#             */
-/*   Updated: 2025/02/06 12:13:21 by tjooris          ###   ########.fr       */
+/*   Updated: 2025/02/12 14:47:30 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "libft.h"
 
 void	order_checker(t_node *stack)
 {

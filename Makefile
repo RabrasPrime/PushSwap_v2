@@ -6,7 +6,7 @@
 #    By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/20 14:10:16 by tjooris           #+#    #+#              #
-#    Updated: 2025/02/07 14:47:58 by tjooris          ###   ########.fr        #
+#    Updated: 2025/02/12 14:55:29 by tjooris          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,6 +63,7 @@ OTHER_NUMBER_SRC    =   big_sort.c \
 #=-=-=-=-=-=-ARG-=-=-=-=-=#
 
 SRC +=  $(addprefix $(ARG_DIR), $(ARG_SRC))
+SRC_BONUS +=  $(addprefix $(ARG_DIR), $(ARG_SRC))
 
 ARG_DIR    =   arg/
 ARG_SRC    =   arg_handler.c
@@ -73,10 +74,6 @@ SRC_BONUS +=   $(addprefix $(BONUS_DIR), $(BONUS_SRC))
 
 BONUS_DIR   =   checker_bonus/
 BONUS_SRC   =   moves.c \
-                push.c \
-                reverse_rotate.c \
-                rotate.c \
-                swap.c \
 
 #=-=-=-=-=-=-STACK-=-=-=-=-=#
 
@@ -91,6 +88,7 @@ STACK_SRC   =   ft_free_stack.c \
 #=-=-=-=-=-=-MOVE-=-=-=-=-=#
 
 SRC +=  $(addprefix $(MOVE_DIR), $(MOVE_SRC))
+SRC_BONUS +=  $(addprefix $(MOVE_DIR), $(MOVE_SRC))
 
 MOVE_DIR    =   moves/
 MOVE_SRC    =   push.c \

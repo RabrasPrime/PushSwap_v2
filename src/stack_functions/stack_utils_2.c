@@ -6,12 +6,11 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 11:27:01 by tjooris           #+#    #+#             */
-/*   Updated: 2025/02/06 11:51:33 by tjooris          ###   ########.fr       */
+/*   Updated: 2025/02/12 14:47:51 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "libft.h"
 
 int	stack_size(t_node *stack)
 {

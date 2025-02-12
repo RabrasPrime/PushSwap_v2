@@ -6,12 +6,52 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 03:41:00 by tjooris           #+#    #+#             */
-/*   Updated: 2025/02/06 11:52:39 by tjooris          ###   ########.fr       */
+/*   Updated: 2025/02/12 14:47:42 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "libft.h"
+#include <limits.h>
+
+int	is_valid_number(char *nb, int *sign)
+{
+	int	i;
+
+	i = 0;
+	*sign = 1;
+	if (nb[i] == '-' || nb[i] == '+')
+	{
+		if (nb[i] == '-')
+			*sign = -1;
+		i++;
+	}
+	if (!nb[i] || !(nb[i] >= '0' && nb[i] <= '9'))
+		return (0);
+	return (i);
+}
+
+int	is_integer(char *nb)
+{
+	int			i;
+	int			sign;
+	long long	result;
+
+	if (!nb || !*nb)
+		return (0);
+	i = is_valid_number(nb, &sign);
+	if (i == 0 && (nb[i] < '0' && nb[i] > '9'))
+		return (0);
+	result = 0;
+	while (nb[i] >= '0' && nb[i] <= '9')
+	{
+		result = result * 10 + (nb[i] - '0');
+		if ((sign == 1 && result > INT_MAX)
+			|| (sign == -1 && - result < INT_MIN))
+			return (0);
+		i++;
+	}
+	return (nb[i] == '\0');
+}
 
 int	*stack_dup(int *array, t_node *stack)
 {
@@ -49,6 +89,8 @@ t_node	*stack_a_init(t_node *stack, char **array)
 {
 	int		i;
 
+	if (!is_integer(array[0]))
+		ft_free_array_error(array);
 	stack = create_node(ft_atoi(array[0]));
 	if (!stack)
 		return (NULL);
@@ -57,6 +99,8 @@ t_node	*stack_a_init(t_node *stack, char **array)
 	i = 1;
 	while (array[i])
 	{
+		if (!is_integer(array[i]))
+			ft_free_stack_and_array_error(&stack, array);
 		pile_down(&stack, create_node(ft_atoi(array[i++])));
 		if (!stack)
 		{

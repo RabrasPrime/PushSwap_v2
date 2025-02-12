@@ -6,11 +6,11 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 11:37:50 by tjooris           #+#    #+#             */
-/*   Updated: 2025/02/06 11:48:48 by tjooris          ###   ########.fr       */
+/*   Updated: 2025/02/12 15:03:32 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
 static void	test_one_arg(char *str, char **array)
 {
@@ -46,7 +46,12 @@ char	**handle_single_argument(char *arg)
 
 	array = ft_split(arg, ' ');
 	if (!array || !array[0])
-		ft_error();
+	{
+		if (!array)
+			ft_error();
+		else
+			ft_free_array_error(array);
+	}
 	if (!array[1])
 		test_one_arg(array[0], array);
 	return (array);

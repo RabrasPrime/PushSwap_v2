@@ -6,13 +6,11 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 13:46:09 by tjooris           #+#    #+#             */
-/*   Updated: 2025/02/07 14:51:15 by tjooris          ###   ########.fr       */
+/*   Updated: 2025/02/12 11:44:15 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
-#include "../include/checker.h"
+#include "checker.h"
 
 int	check_good_sort(t_node *stack_a, t_node *stack_b)
 {
@@ -31,61 +29,6 @@ int	check_good_sort(t_node *stack_a, t_node *stack_b)
 		return (0);
 	return (1);
 }
-/*
-t_node	*create_node(int value)
-{
-	t_node	*node;
-
-	node = malloc(sizeof(*node));
-	node->nb = value;
-	node->ra = 0;
-	node->rb = 0;
-	node->rra = 0;
-	node->rrb = 0;
-	return (node);
-}*/
-
-char	**args_handler(int *ac, char **av)
-{
-	char	**array;
-	int		i;
-
-	if (*ac < 2)
-		exit(1);
-	else if (*ac == 2)
-	{
-		array = ft_split(av[1], ' ');
-		if (!array)
-		{
-			write(2, "Error\n", 6);
-			exit(1);
-		}
-		*ac = ft_array_size(array);
-	}
-	else
-	{
-		i = 0;
-		array = malloc(sizeof(char *) * (*ac));
-		while (++i < *ac)
-			array[i - 1] = ft_strdup(av[i]);
-		array[i - 1] = NULL;
-		(*ac)--;
-	}
-	return (array);
-}
-/*
-t_node	*stack_a_init(t_node *stack, char **array)
-{
-	int	i;
-
-	stack = create_node(ft_atoi(array[0]));
-	stack->next = stack;
-	stack->prev = stack;
-	i = 1;
-	while (array[i])
-		pile_down(&stack, create_node(ft_atoi(array[i++])));
-	return (stack);
-}*/
 
 int	main(int ac, char **av)
 {
@@ -100,6 +43,7 @@ int	main(int ac, char **av)
 	array = NULL;
 	array = args_handler(&ac, av);
 	stack_a = stack_a_init(stack_a, array);
+	ft_free_array(array);
 	stack_b = NULL;
 	str = "";
 	while (str)
@@ -112,4 +56,5 @@ int	main(int ac, char **av)
 		write(1, "OK\n", 3);
 	else
 		write(1, "KO\n", 3);
+	ft_free_stack(&stack_a, stack_size(stack_a));
 }
