@@ -6,7 +6,7 @@
 #    By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/20 14:10:16 by tjooris           #+#    #+#              #
-#    Updated: 2025/02/07 14:18:00 by tjooris          ###   ########.fr        #
+#    Updated: 2025/02/13 11:34:16 by tjooris          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,6 +66,7 @@ MEM_SRC =	ft_bzero.c \
 			ft_calloc.c \
 			ft_memcmp.c \
 			ft_memmove.c \
+			ft_realloc.c \
 
 #=-=-=-=-=-=-GNL-=-=-=-=-=#
 
@@ -81,7 +82,7 @@ GNL_SRC +=	get_next_line_utils.c \
 SRC	+=	$(addprefix $(PRINTF_DIR), $(PRINTF_SRC))
 
 PRINTF_DIR	=	printf/
-PRINTF_DIR	=	ft_char.c \
+PRINTF_SRC	=	ft_char.c \
 				ft_integer.c \
 				ft_printf.c \
 				ft_printstr.c \

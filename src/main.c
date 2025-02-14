@@ -6,7 +6,7 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 03:40:56 by tjooris           #+#    #+#             */
-/*   Updated: 2025/02/12 15:58:59 by tjooris          ###   ########.fr       */
+/*   Updated: 2025/02/14 14:05:36 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	order_checker(t_node *stack)
 			return ;
 		current = current->next;
 	}
+	ft_free_stack(&(stack), stack_size(stack));
 	exit(EXIT_SUCCESS);
 }
 
