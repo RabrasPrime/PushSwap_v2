@@ -6,7 +6,7 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 03:41:05 by tjooris           #+#    #+#             */
-/*   Updated: 2025/02/11 16:29:46 by tjooris          ###   ########.fr       */
+/*   Updated: 2025/02/19 17:55:32 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,11 @@ void	ft_free_stack(t_node **stack, int size)
 		i++;
 	}
 	*stack = NULL;
+}
+
+void	ft_free_stack_and_str_err(t_node **stack, char *str)
+{
+	free(str);
+	ft_free_stack(stack, stack_size(*stack));
+	ft_error();
 }

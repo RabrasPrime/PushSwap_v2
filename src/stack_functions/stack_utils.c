@@ -6,7 +6,7 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 03:41:00 by tjooris           #+#    #+#             */
-/*   Updated: 2025/02/12 15:59:21 by tjooris          ###   ########.fr       */
+/*   Updated: 2025/02/19 17:35:32 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ t_node	*stack_a_init(t_node *stack, char **array)
 		ft_free_array_error(array);
 	stack = create_node(ft_atoi(array[0]));
 	if (!stack)
-		return (NULL);
+		ft_free_array_error(array);
 	stack->next = stack;
 	stack->prev = stack;
 	i = 1;

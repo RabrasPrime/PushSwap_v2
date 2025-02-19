@@ -6,7 +6,7 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 11:37:50 by tjooris           #+#    #+#             */
-/*   Updated: 2025/02/12 16:01:31 by tjooris          ###   ########.fr       */
+/*   Updated: 2025/02/19 17:38:59 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,8 @@ static void	test_one_arg(char *str, char **array)
 			ft_error();
 		}
 	}
-	ft_atoi(str);
+	if (!is_integer(str))
+		ft_free_array_error(array);
 	ft_free_array(array);
 	exit(0);
 }
