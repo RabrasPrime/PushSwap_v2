@@ -6,7 +6,7 @@
 #    By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/20 14:10:16 by tjooris           #+#    #+#              #
-#    Updated: 2025/02/12 14:55:29 by tjooris          ###   ########.fr        #
+#    Updated: 2025/02/19 19:42:17 by tjooris          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,7 +66,7 @@ SRC +=  $(addprefix $(ARG_DIR), $(ARG_SRC))
 SRC_BONUS +=  $(addprefix $(ARG_DIR), $(ARG_SRC))
 
 ARG_DIR    =   arg/
-ARG_SRC    =   arg_handler.c
+ARG_SRC    =   arg_handler.c \
 
 #=-=-=-=-=-=-BONUS-=-=-=-=-=#
 
@@ -74,6 +74,8 @@ SRC_BONUS +=   $(addprefix $(BONUS_DIR), $(BONUS_SRC))
 
 BONUS_DIR   =   checker_bonus/
 BONUS_SRC   =   moves.c \
+				push_bonus.c  \
+
 
 #=-=-=-=-=-=-STACK-=-=-=-=-=#
 
@@ -94,14 +96,14 @@ MOVE_DIR    =   moves/
 MOVE_SRC    =   push.c \
                 rotate.c \
                 reverse_rotate.c \
-                swap.c
+                swap.c \
 
 #=-=-=-=-=-=-INDEXING-=-=-=-=-=#
 
 SRC +=  $(addprefix $(INDEXING_DIR), $(INDEXING_SRC))
 
 INDEXING_DIR    =   indexing_functions/
-INDEXING_SRC    =   indexing_utils.c
+INDEXING_SRC    =   indexing_utils.c \
 
 #=-=-=-=-=-=-INCLUDES-=-=-=-=-=#
 

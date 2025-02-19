@@ -6,11 +6,12 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 03:41:05 by tjooris           #+#    #+#             */
-/*   Updated: 2025/02/19 17:55:32 by tjooris          ###   ########.fr       */
+/*   Updated: 2025/02/19 19:41:11 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include "get_next_line.h"
 
 void	ft_free_stack_and_array_error(t_node **stack, char **array)
 {
@@ -49,5 +50,6 @@ void	ft_free_stack_and_str_err(t_node **stack, char *str)
 {
 	free(str);
 	ft_free_stack(stack, stack_size(*stack));
+	get_next_line(0, 0);
 	ft_error();
 }

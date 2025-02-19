@@ -6,7 +6,7 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 13:46:09 by tjooris           #+#    #+#             */
-/*   Updated: 2025/02/12 11:44:15 by tjooris          ###   ########.fr       */
+/*   Updated: 2025/02/19 19:47:49 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	main(int ac, char **av)
 	str = "";
 	while (str)
 	{
-		str = get_next_line(0);
+		str = get_next_line(0, 1);
 		do_moves_bonus(str, &stack_a, &stack_b);
 		free(str);
 	}

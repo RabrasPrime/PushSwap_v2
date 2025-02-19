@@ -6,13 +6,14 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 09:18:17 by tjooris           #+#    #+#             */
-/*   Updated: 2025/02/19 17:55:52 by tjooris          ###   ########.fr       */
+/*   Updated: 2025/02/19 19:48:33 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "struct.h"
 #include "libft.h"
 #include "stack.h"
+#include "push.h"
 #include "move.h"
 
 void	rrr_bonus(t_node **stack_a, t_node **stack_b)
@@ -48,9 +49,9 @@ void	do_moves_bonus(char *str, t_node **stack_a, t_node **stack_b)
 	else if (!ft_strncmp(str, "rrr\n", 4))
 		rrr_bonus(stack_a, stack_b);
 	else if (!ft_strncmp(str, "pa\n", 3))
-		pa(stack_a, stack_b);
+		pa_bonus(stack_a, stack_b);
 	else if (!ft_strncmp(str, "pb\n", 3))
-		pb(stack_a, stack_b);
+		pb_bonus(stack_a, stack_b);
 	else
 		ft_free_stack_and_str_err(stack_a, str);
 }

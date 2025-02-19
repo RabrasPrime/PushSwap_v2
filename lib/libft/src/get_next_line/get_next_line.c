@@ -6,7 +6,7 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 15:20:29 by tjooris           #+#    #+#             */
-/*   Updated: 2025/02/19 17:51:38 by tjooris          ###   ########.fr       */
+/*   Updated: 2025/02/19 19:40:38 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ static char	*extract_line(t_buffer *buffer, char *newline_pos)
 	return (line);
 }
 
-char	*get_next_line(int fd)
+char	*get_next_line(int fd, int status)
 {
 	static t_buffer	buffer;
 	ssize_t			bytes_read;
@@ -86,6 +86,11 @@ char	*get_next_line(int fd)
 	char			*line;
 
 	line = NULL;
+	if (!status)
+	{
+		free(buffer.data);
+		return (NULL);
+	}
 	bytes_read = read_until_newline(fd, &buffer, &newline_pos);
 	if (bytes_read != -1 && buffer.length > 0)
 		line = extract_line(&buffer, newline_pos);
