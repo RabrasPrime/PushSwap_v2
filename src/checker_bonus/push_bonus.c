@@ -6,14 +6,13 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 19:33:06 by tjooris           #+#    #+#             */
-/*   Updated: 2025/02/19 19:39:01 by tjooris          ###   ########.fr       */
+/*   Updated: 2025/03/03 08:56:50 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "struct.h"
 #include "stdlib.h"
 #include "unistd.h"
-
 
 static void	pointers_init(t_node **l, t_node **n, t_node **s, t_node **stack)
 {

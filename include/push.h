@@ -6,12 +6,12 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 19:34:30 by tjooris           #+#    #+#             */
-/*   Updated: 2025/02/19 19:40:24 by tjooris          ###   ########.fr       */
+/*   Updated: 2025/03/03 08:57:37 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_H
-# define PUSH_h
+# define PUSH_H
 
 # include "struct.h"
 
